@@ -1,0 +1,2 @@
+---- esp_task_wdt_feed Matches (1 in 1 files) ----
+esp_task_wdt.h (Z:\esp\esp-idf\components\esp_common\include) line 158 : void esp_task_wdt_feed() __attribute__ ((deprecated));
