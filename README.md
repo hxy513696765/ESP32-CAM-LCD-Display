@@ -5,9 +5,9 @@ Using ESP32 to display OV2640 on ILI9341 LCD
 
 ----
 
-### ESP-CAM开发版原理图
+### ESP32-CAM开发版原理图
 ![ESP32-CAM开发版](https://github.com/hxy513696765/ESP32-CAM-LCD-Display/blob/main/doc/ESP32-CAM-AI-Thinker-schematic-diagram.png)
-### ESP-CAM引脚定义图
+### ESP32-CAM引脚定义图
 ![ESP32-CAM引脚图](https://raw.githubusercontent.com/hxy513696765/ESP32-CAM-LCD-Display/main/doc/ESP32-CAM-pinout.png)
 
 ----
@@ -34,7 +34,7 @@ Using ESP32 to display OV2640 on ILI9341 LCD
 
 ----
 
-### ESP-CAM和ILI9341 LCD的引脚连接方式
+### ESP32-CAM和ILI9341 LCD的引脚连接方式
 
 |  Index  | ESP32-CAM Pin | ILI9341 LCD Pin |
 | :-----: | :---------: | :---------: |
@@ -82,4 +82,21 @@ Using ESP32 to display OV2640 on ILI9341 LCD
 - ESP32 KIT开发版引脚定义
 ![ESP32KIT](https://raw.githubusercontent.com/hxy513696765/ESP32-CAM-LCD-Display/main/doc/kit.png)
 
-- 此项目基于[esp32-camera](https://github.com/espressif/esp32-camera)基础上修改完成。
+- 此项目基于[esp-who](https://github.com/espressif/esp-who)基础上修改完成。
+- 参考[“ESP32搭建Ubuntu开发环境”](https://segmentfault.com/a/1190000012119486)文章完成开发环境搭建，文章中的交叉编译工具可以在官方网站[交叉编译工具更新地址](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/tools/idf-tools.html?highlight=xtensa%20esp32%20elf) 页面中的“[List of IDF Tools](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/tools/idf-tools.html?highlight=xtensa%20esp32%20elf#xtensa-esp32-elf)”文章部分下载最新的交叉编译工具.
+- 如何更新交叉编译工具？
+在[官方交叉编译工具更新地址](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/tools/idf-tools.html?highlight=xtensa%20esp32%20elf#xtensa-esp32-elf)下载最新的交叉编译工具解压替换掉系统原来放置交叉编译工具的文件夹就可以了。
+
+**如：只要替换掉“xtensa-esp32-elf”文件夹即可完成更新**
+```
+hxy@Unbunt:/opt$ ls
+VBoxGuestAdditions-5.1.4  xtensa-esp32-elf  xtensa-lx106-elf
+```
+- ESP32-IDF所需的Python包位于$IDF_PATH/requirements.txt文件中,可以通过以下命令来安装它们：
+```
+python -m pip install --user -r $IDF_PATH/requirements.txt
+
+$IDF_PATH = 存放esp-idf包的路径（如：/home/hxy/esp/esp-idf/）
+列如：python -m pip install --user -r /home/hxy/esp/esp-idf/requirements.txt
+```
+
